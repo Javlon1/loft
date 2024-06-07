@@ -1,0 +1,26 @@
+$black: #242323;
+$gray: #abb8c3;
+$white: #fff;
+$pink: #f78da7;
+$red: #cf2e2e;
+$light-green: #7bdcb5;
+$green: #00d084;
+$light-blue: #8ed1fc;
+$blue: #0693e3;
+$purple: #9b51e0;
+$amber: #fcb900;
+$orange: #ff6900;
+
+$radius: 1rem;
+$fs-title: 3rem;
+$transition: .3s all ease;
+
+
+
+@mixin title {
+    font-size: $fs-title;
+
+    @media only screen and (max-width: 991px) {
+        font-size: 1.6rem;
+    }
+}

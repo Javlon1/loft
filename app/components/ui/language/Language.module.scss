@@ -1,0 +1,23 @@
+@import '../../../assets/variables';
+
+.select {
+    appearance: none;
+    padding: .1rem 1rem;
+    cursor: pointer;
+    color: $white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: transparent;
+    border: 0;
+
+    option {
+        background-color: $black;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .select {
+        font-size: 1rem;
+        padding: .3rem 1.2rem;
+    }
+}
