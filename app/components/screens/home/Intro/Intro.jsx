@@ -17,7 +17,7 @@ const Intro = () => {
     const { lan } = React.useContext(Context);
     const [introTitle] = React.useState([{ id: 1, nav_en: 'FURNITURE IN LOFT STYLE', nav_ru: 'МЕБЕЛЬ В СТИЛЕ ЛОФТ', nav_uz: 'LOFT STILDAGI MEBELAR', }]);
     const [modalTitle] = React.useState([{ id: 1, nav_en: 'MAKE AN ORDER VIA OUR WEBSITE AND RECEIVE A 5% DISCOUNT', nav_ru: 'СДЕЛАЙТЕ ЗАКАЗ ЧЕРЕЗ НАШ САЙТ И ПОЛУЧИТЕ 5% СКИДКУ', nav_uz: 'SAYTIMIZ ORQALI BUYURTMA BERING VA 5% CHEGIRMA OLING', }]);
-    const [modalLink] = React.useState([{ id: 1, nav_en: '', nav_ru: 'Перейти к каталогу', nav_uz: '', }]);
+    const [modalLink] = React.useState([{ id: 1, nav_en: 'Go to catalog', nav_ru: 'Перейти к каталогу', nav_uz: "Katalogga o'tish", }]);
     const [modalBtn] = React.useState([{ id: 1, nav_en: 'Leave a request', nav_ru: 'Оставьте заявку', nav_uz: "So'rov qoldirish", }]);
     const [modalFormBtn] = React.useState([{ id: 1, nav_en: 'Send', nav_ru: 'Отправить', nav_uz: "Yuborish", }]);
     const [modal, setModal] = React.useState(false)
