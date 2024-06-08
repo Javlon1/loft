@@ -131,24 +131,44 @@ const Intro = () => {
                             src={slayd1}
                             alt='slayd'
                         />
+                        {introTitle?.map((item) => (
+                            <strong className={styles.intro__title} key={item.id}>
+                                {item[`nav_${lan}`]}
+                            </strong>
+                        ))}
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image
                             src={slayd2}
                             alt='slayd'
                         />
+                        {introTitle?.map((item) => (
+                            <strong className={styles.intro__title} key={item.id}>
+                                {item[`nav_${lan}`]}
+                            </strong>
+                        ))}
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image
                             src={slayd1}
                             alt='slayd'
                         />
+                        {introTitle?.map((item) => (
+                            <strong className={styles.intro__title} key={item.id}>
+                                {item[`nav_${lan}`]}
+                            </strong>
+                        ))}
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image
                             src={slayd2}
                             alt='slayd'
                         />
+                        {introTitle?.map((item) => (
+                            <strong className={styles.intro__title} key={item.id}>
+                                {item[`nav_${lan}`]}
+                            </strong>
+                        ))}
                     </SwiperSlide>
                 </Swiper>
                 <div className={styles['swiper-button-prev-custom']}>
@@ -158,11 +178,6 @@ const Intro = () => {
                     <i className="fa-solid fa-angle-right"></i>
                 </div>
                 <div className={styles['swiper-pagination-custom']}></div>
-                {introTitle?.map((item) => (
-                    <strong className={styles.intro__title} key={item.id}>
-                        {item[`nav_${lan}`]}
-                    </strong>
-                ))}
             </div>
 
         </section>
