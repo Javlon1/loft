@@ -12,13 +12,12 @@ $amber: #fcb900;
 $orange: #ff6900;
 
 $radius: 1rem;
-$fs-title: 3rem;
 $transition: .3s all ease;
 
 
 
 @mixin title {
-    font-size: $fs-title;
+    font-size: 3rem;
 
     @media only screen and (max-width: 991px) {
         font-size: 1.6rem;
