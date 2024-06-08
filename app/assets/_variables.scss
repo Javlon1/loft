@@ -24,3 +24,10 @@ $transition: .3s all ease;
         font-size: 1.6rem;
     }
 }
+@mixin content {
+    font-size: 2rem;
+
+    @media only screen and (max-width: 991px) {
+        font-size: 1rem;
+    }
+}
