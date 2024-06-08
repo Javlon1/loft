@@ -8,7 +8,11 @@ import stilaj from '../../../../../public/img/stilaj.jpg'
 
 const About = () => {
     const { lan } = React.useContext(Context);
-    const [saleData] = React.useState([{ id: 1, nav_en: 'All categories', nav_ru: 'Все категории', nav_uz: 'Barcha toifalar' }]);
+    const [chairData] = React.useState([{ id: 1, nav_en: 'TABLES AND CHAIRS', nav_ru: 'СТОЛЫ И СТУЛЬЯ', nav_uz: 'Stol va kursilar' }]);
+    const [racksData] = React.useState([{ id: 1, nav_en: 'RACKS', nav_ru: 'СТЕЛЛАЖИ', nav_uz: 'REKLAR' }]);
+    const [cushionData] = React.useState([{ id: 1, nav_en: 'CUSHIONED FURNITURE', nav_ru: 'МЯГКАЯ МЕБЕЛЬ', nav_uz: 'YUMSHOQ MEBEL' }]);
+    const [tableData] = React.useState([{ id: 1, nav_en: 'TABLES', nav_ru: 'ЖУРНАЛЬНЫЕ СТОЛИКИ', nav_uz: 'STOLLARI' }]);
+    const [categoriesData] = React.useState([{ id: 1, nav_en: 'All categories', nav_ru: 'Все категории', nav_uz: 'Barcha toifalar' }]);
 
     return (
         <section className={styles.about}>
@@ -26,7 +30,7 @@ const About = () => {
                             />
 
                             {
-                                saleData?.map((item) => (
+                                chairData?.map((item) => (
                                     <p key={item.id}>
                                         {item[`nav_${lan}`]}
                                     </p>
@@ -44,7 +48,7 @@ const About = () => {
                             />
 
                             {
-                                saleData?.map((item) => (
+                                racksData?.map((item) => (
                                     <p key={item.id}>
                                         {item[`nav_${lan}`]}
                                     </p>
@@ -62,7 +66,7 @@ const About = () => {
                             />
 
                             {
-                                saleData?.map((item) => (
+                                cushionData?.map((item) => (
                                     <p key={item.id}>
                                         {item[`nav_${lan}`]}
                                     </p>
@@ -80,7 +84,7 @@ const About = () => {
                             />
 
                             {
-                                saleData?.map((item) => (
+                                tableData?.map((item) => (
                                     <p key={item.id}>
                                         {item[`nav_${lan}`]}
                                     </p>
@@ -89,7 +93,7 @@ const About = () => {
                         </Link>
                     </div>
                     {
-                        saleData?.map((item) => (
+                        categoriesData?.map((item) => (
                             <Link data-aos="fade-up" className={styles.about__items__link} key={item.id} href={'/'}>
                                 {item[`nav_${lan}`]}
                             </Link>

@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Intro from '@/app/components/screens/home/Intro/Intro';
 import { Context } from '@/app/components/ui/Context/Context';
 import About from '@/app/components/screens/home/About/About';
+import Products from '@/app/components/screens/home/Products/Products';
 
 const Index = () => {
     const { lan } = React.useContext(Context);
@@ -33,6 +34,7 @@ const Index = () => {
 
             <Intro />
             <About />
+            <Products />
         </>
     )
 }

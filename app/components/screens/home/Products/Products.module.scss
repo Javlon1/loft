@@ -1,0 +1,100 @@
+@import '../../../../assets/variables';
+
+.products {
+    padding: 0 0 100px;
+
+    &__item {
+        margin-top: 2rem;
+
+        &__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+
+            &__title {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                p {
+                    color: $black;
+                    @include content;
+                }
+
+                i {
+                    width: 40px;
+                    height: 40px;
+                    color: $white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.1rem;
+                    background-color: $black;
+                }
+            }
+
+            &__btns {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .btn__next,
+                .btn__prev {
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    background: rgba(0, 0, 0, 0.5);
+                    padding: 10px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+        img {
+            width: 100%;
+            height: 500px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .products {
+        padding: 0 0 50px;
+
+        &__item {
+            &__header {
+                &__title {
+                    gap: 10px;
+
+                    i {
+                        width: 30px;
+                        height: 30px;
+                        font-size: 1rem;
+                    }
+                }
+
+                &__btns {
+
+                    .btn__next,
+                    .btn__prev {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+            }
+
+            img {
+                width: 100%;
+                height: 500px;
+            }
+        }
+    }
+}
