@@ -16,6 +16,13 @@ const Intro = () => {
     const { lan } = React.useContext(Context);
     const [introTitle] = React.useState([{ id: 1, nav_en: 'FURNITURE IN LOFT STYLE', nav_ru: 'МЕБЕЛЬ В СТИЛЕ ЛОФТ', nav_uz: 'LOFT STILDAGI MEBELAR', }]);
 
+    const handlePrevButtonClick = () => {
+        console.log('Previous button clicked');
+    };
+
+    const handleNextButtonClick = () => {
+        console.log('Next button clicked');
+    };
 
     return (
         <section className={styles.intro}>
@@ -33,8 +40,6 @@ const Intro = () => {
                     }}
                     pagination={{ clickable: true, el: `.${styles['swiper-pagination-custom']}` }}
                     loop={true}
-                // onSwiper={(swiper) => console.log(swiper)}
-                // onSlideChange={() => console.log('slide change')}
                 >
                     <SwiperSlide>
                         <Image
@@ -54,8 +59,14 @@ const Intro = () => {
                             alt='slayd'
                         />
                     </SwiperSlide>
+                    <SwiperSlide>
+                        <Image
+                            src={slayd2}
+                            alt='slayd'
+                        />
+                    </SwiperSlide>
                 </Swiper>
-                <div className={styles['swiper-button-prev-custom']}>
+                <div onClick={handlePrevButtonClick} className={styles['swiper-button-prev-custom']}>
                     <i className="fa-solid fa-angle-left"></i>
                 </div>
                 <div className={styles['swiper-button-next-custom']}>
@@ -63,14 +74,13 @@ const Intro = () => {
                 </div>
                 <div className={styles['swiper-pagination-custom']}></div>
 
-                {
-                    introTitle?.map((item) => (
-                        <strong className={styles.intro__title} key={item.id}>
-                            {item[`nav_${lan}`]}
-                        </strong>
-                    ))
-                }
+                {introTitle?.map((item) => (
+                    <strong className={styles.intro__title} key={item.id}>
+                        {item[`nav_${lan}`]}
+                    </strong>
+                ))}
             </div>
+
         </section>
     )
 }

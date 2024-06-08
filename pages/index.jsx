@@ -1,9 +1,15 @@
 import * as React from 'react'
 import Head from 'next/head'
 import Intro from '@/app/components/screens/home/Intro/Intro';
+import { Context } from '@/app/components/ui/Context/Context';
 
 const Index = () => {
-
+    const { lan } = React.useContext(Context);
+    const [title] = React.useState({
+        en: 'Main',
+        ru: 'Главная',
+        uz: 'Asosiy'
+    });
     return (
         <>
             <Head>
@@ -21,7 +27,7 @@ const Index = () => {
                 <meta property="og:site_name" content="" /> // Название сайта
                 <meta property="og:locale" content="ru_RU" />
 
-                <title>Home</title>
+                <title>Loft | {title[lan]}</title>
             </Head>
 
             <Intro />
