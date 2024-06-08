@@ -233,6 +233,14 @@
     }
 }
 
+@media (max-width: 767px) {
+    .intro {
+        .modal {
+            width: 95%;
+        }
+    }
+}
+
 
 .actModal {
     display: block !important;
