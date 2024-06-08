@@ -40,8 +40,8 @@ const Products = () => {
                         modules={[Navigation, Scrollbar, A11y]}
                         spaceBetween={10}
                         navigation={{
-                            prevEl: `.${styles.btn__prev}`,
-                            nextEl: `.${styles.btn__next}`,
+                            prevEl: `.${styles.btn__next}`,
+                            nextEl: `.${styles.btn__prev}`,
                         }}
                         loop={true}
                         breakpoints={{
