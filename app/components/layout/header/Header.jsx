@@ -71,11 +71,13 @@ const Header = () => {
                         ))
                     }
                     <div className={styles.header__nav__links}>
+                        <Language />
+                        <a href="tel:+998937011723">
+                            <i className="fa-solid fa-phone"></i>
+                        </a>
                         <Link href={'/'}>
                             <i className="fa-solid fa-cart-shopping"></i>
                         </Link>
-                        <a className={styles.header__nav__links__tel} href="tel:+998937011723">(93) 701-17-23</a>
-                        <Language />
                     </div>
                 </nav>
                 <nav className={styles.header__navResponsive}>

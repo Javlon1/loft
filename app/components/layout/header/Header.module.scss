@@ -83,6 +83,7 @@
 
             a {
                 color: $white;
+                margin-right: 15px;
             }
 
             &__tel {
@@ -148,7 +149,7 @@
             &__title {
                 color: $white;
                 font-size: 1.5rem;
-                font-weight: 600;
+                font-weight: 500;
                 transition: .5s all ease;
                 margin-left: 30px;
                 transform: translate(-30px, -20px);
