@@ -180,7 +180,7 @@ const Products = () => {
                     >
                         {
                             data?.map((item) => (
-                                <SwiperSlide>
+                                <SwiperSlide key={item.id}>
                                     <div className={styles.products__item__cart}>
                                         <div className={styles.products__item__cart__item}>
                                             <Link
@@ -258,7 +258,7 @@ const Products = () => {
                     >
                         {
                             data?.map((item) => (
-                                <SwiperSlide>
+                                <SwiperSlide key={item.id}>
                                     <div className={styles.products__item__cart}>
                                         <div className={styles.products__item__cart__item}>
                                             <Link
