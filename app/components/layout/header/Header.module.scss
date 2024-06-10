@@ -384,6 +384,10 @@
             &__center {
                 align-items: start;
 
+                &__title {
+                    font-size: 1.5rem;
+                }
+
                 .header__nav__links__tel {
                     margin-left: 0;
                 }
