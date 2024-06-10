@@ -1,0 +1,71 @@
+@import '../../../../assets/variables';
+
+.reviews {
+    padding: 2rem 0;
+    background-color: $black;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+
+        &__title {
+            margin-top: 1rem;
+            text-align: center;
+            color: $white;
+            @include content;
+        }
+
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            &__item {
+                padding: 1rem;
+                background-color: $white;
+                flex: 1;
+
+                .header {
+                    display: flex;
+                    align-items: center;
+                    gap: 25px;
+                    padding-bottom: 1rem;
+                    border-bottom: 1.5px solid $gray;
+
+                    .name {
+                        color: $black;
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                    }
+                }
+
+                .text {
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+
+        &__link {
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            background-color: $black;
+            color: $white;
+            border: 2px solid $white;
+            transition: $transition !important;
+
+            &:hover {
+                background-color: $white;
+                color: $black;
+            }
+        }
+    }
+}
