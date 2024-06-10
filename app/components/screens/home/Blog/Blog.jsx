@@ -12,6 +12,7 @@ const Blog = () => {
     const { lan } = React.useContext(Context);
     const [blogData] = React.useState([{ id: 1, nav_en: 'VIDEO BLOG', nav_ru: 'ВИДЕ ОБЛОГ', nav_uz: 'VIDEO BLOG' }]);
     const [blogTitle] = React.useState([{ id: 1, nav_en: 'See all', nav_ru: 'Смотреть все', nav_uz: "Hammasini ko'rish" }]);
+    const [productTitle] = React.useState([{ id: 1, nav_en: 'PROJECTS', nav_ru: 'ПРОЕКТЫ', nav_uz: "LOYIHALAR" }]);
     const [data] = React.useState(
         [
             {
@@ -33,6 +34,49 @@ const Blog = () => {
                 <div className={styles.blog__item}>
                     {
                         blogData?.map((item) => (
+                            <p data-aos="fade-up" className={styles.blog__item__title} key={item.id}>
+                                {item[`nav_${lan}`]}
+                            </p>
+                        ))
+                    }
+                    <div className={styles.blog__item__list}>
+                        {
+                            data?.map((item) => (
+                                <div data-aos="fade-up" key={item.id} className={styles.blog__item__list__cart}>
+                                    <Link
+                                        className={styles.blog__item__list__cart__img}
+                                        href={'/'}
+                                    >
+                                        <Image
+                                            src={item.image}
+                                            alt='slayd'
+                                        />
+                                    </Link>
+                                    <Link
+                                        href={'/'}
+                                    >
+                                        <b>{item.name}</b>
+                                    </Link>
+                                </div>
+                            ))
+                        }
+                    </div>
+                    {
+                        blogTitle?.map((item) => (
+                            <Link
+                                data-aos="fade-up"
+                                className={styles.blog__item__link}
+                                href={'/'}
+                                key={item.id}
+                            >
+                                {item[`nav_${lan}`]}
+                            </Link>
+                        ))
+                    }
+                </div>
+                <div className={styles.blog__item}>
+                    {
+                        productTitle?.map((item) => (
                             <p data-aos="fade-up" className={styles.blog__item__title} key={item.id}>
                                 {item[`nav_${lan}`]}
                             </p>

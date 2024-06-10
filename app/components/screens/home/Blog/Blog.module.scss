@@ -1,10 +1,11 @@
 @import "../../../../assets/variables";
 
 .blog {
-    padding: 100px 0;
+    padding: 0 0 100px;
     background-color: $black;
 
     &__item {
+        margin-top: 100px;
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -62,12 +63,22 @@
             background-color: $black;
             color: $white;
             border: 2px solid $white;
-            transition: $transition;
+            transition: $transition !important;
 
             &:hover {
                 background-color: $white;
                 color: $black;
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .blog {
+        padding: 0 0 50px;
+
+        &__item {
+            margin-top: 50px;
         }
     }
 }
