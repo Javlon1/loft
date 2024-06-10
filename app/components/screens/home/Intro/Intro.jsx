@@ -114,7 +114,7 @@ const Intro = () => {
                 </form>
             </div>
 
-            <div className={styles['swiper-container']}>
+            <div data-aos="zoom-in" className={styles['swiper-container']}>
                 <Swiper
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={10}
