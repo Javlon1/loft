@@ -45,7 +45,7 @@ const Reviews = () => {
                 <div className={styles.reviews__item}>
                     {
                         reviewsTitle?.map((item) => (
-                            <p className={styles.reviews__item__title} key={item.id}>
+                            <p data-aos="fade-up" className={styles.reviews__item__title} key={item.id}>
                                 {item[`nav_${lan}`]}
                             </p>
                         ))

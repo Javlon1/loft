@@ -26,6 +26,7 @@
             &__item {
                 padding: 1rem;
                 background-color: $white;
+                min-width: 200px;
                 flex: 1;
 
                 .header {
