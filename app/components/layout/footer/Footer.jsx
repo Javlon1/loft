@@ -20,6 +20,17 @@ const Footer = () => {
 
     return (
         <footer className={styles.footer}>
+            <Link href={'/'}>
+                <div>
+                    <span></span>
+                    <div>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </Link>
             <MyContainer>
                 <div className={styles.footer__list}>
                     <div className={styles.footer__list__logo}>
