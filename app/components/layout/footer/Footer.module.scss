@@ -1,92 +1,254 @@
 @import '../../../assets/variables';
 
-.footer {
-    background-color: $black;
-    padding: 3rem 0;
+.mainFooter {
+    &__question {
+        height: 400px;
+        position: relative;
+        overflow-x: hidden;
+        display: block;
+        background-color: $black;
 
-    &__list {
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
-        align-items: start;
-        flex-wrap: wrap;
-
-        &__logo {
+        &__btn {
+            position: absolute;
+            z-index: 2;
+            top: 78px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            justify-content: center;
+            transition: 0.3s ease;
+            align-items: center;
+            color: $black;
+            font-size: 4rem;
+            background-color: $white;
 
-            &__title {
-                color: $white;
-                font-size: 1rem;
-                font-weight: 500;
+            i {
+                z-index: 2;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 1px;
+                height: 1px;
+                background: #000;
+                border-radius: 50%;
+                transition: 0.3s;
             }
         }
 
-        &__nav {
-            display: flex;
-            gap: 20px;
-            width: 550px;
-            justify-content: space-between;
-            flex-wrap: wrap;
+        &:hover {
+            .mainFooter__question__btn {
+                color: $white !important;
 
-            &__title {
-                color: $white;
-                font-size: 1.4rem;
-                font-weight: 600;
+                &::before {
+                    width: 101% !important;
+                    height: 101% !important;
+                }
             }
 
-            &__list {
-                margin-top: 1rem;
+            .mainFooter__question__inner__text {
+                color: white !important;
+                opacity: 1;
+            }
+        }
+
+        &__inner {
+            display: flex;
+            position: absolute;
+            bottom: 74px;
+            animation: scroll linear infinite 40s;
+            width: 4000px;
+            transition: $transition;
+
+            &__text {
+                font-family: 'NEXT-ART';
+                font-weight: 700;
+                font-size: 118px;
+                line-height: 188px;
+                white-space: nowrap;
+                text-transform: uppercase;
+                color: #828282;
+                opacity: 0.1;
+                margin-right: 77px;
+                transition: 0.3s;
+            }
+        }
+    }
+
+    &__footer {
+        padding: 3rem 0;
+        background-color: #191817;
+
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            align-items: start;
+            flex-wrap: wrap;
+
+            &__logo {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
 
-                &__item {
-                    a {
-                        transition: $transition;
-                        color: $white;
-
-                        &:hover {
-                            color: $red;
-                        }
-                    }
+                &__title {
+                    color: $white;
+                    font-size: 1rem;
+                    font-weight: 500;
                 }
             }
-        }
 
-        &__links {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-
-            &__title {
-                color: $white;
-                font-size: 1.4rem;
-                font-weight: 600;
-            }
-
-            &__list {
+            &__nav {
                 display: flex;
+                gap: 20px;
+                width: 550px;
+                justify-content: space-between;
+                flex-wrap: wrap;
 
-                &__item {
-                    a {
-                        border: 1px solid $gray;
-                        padding: .5rem .8rem;
-                        color: $white;
-                        background-color: $black;
-                        transition: $transition;
-                        font-size: 1.2rem;
+                &__title {
+                    color: $white;
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                }
 
-                        &:hover {
-                            border: 1px solid $white;
-                            background-color: $white;
-                            color: $black;
+                &__list {
+                    margin-top: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    &__item {
+                        a {
+                            transition: $transition;
+                            color: $white;
+
+                            &:hover {
+                                color: $red;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &__links {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                &__title {
+                    color: $white;
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                }
+
+                &__list {
+                    display: flex;
+
+                    &__item {
+                        a {
+                            border: 1px solid $gray;
+                            padding: .5rem .8rem;
+                            color: $white;
+                            background-color: $black;
+                            transition: $transition;
+                            font-size: 1.2rem;
+
+                            &:hover {
+                                border: 1px solid $white;
+                                background-color: $white;
+                                color: $black;
+                            }
                         }
                     }
                 }
             }
         }
+    }
+}
+
+
+@media only screen and (max-width: 1199px) {
+    .mainFooter {
+        &__question {
+            height: 350px;
+
+            &__btn {
+                width: 130px;
+                height: 130px;
+                font-size: 3rem;
+            }
+
+            &__inner {
+                bottom: 40px;
+
+                &__text {
+                    font-weight: 600;
+                    font-size: 100px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .mainFooter {
+        &__question {
+            height: 300px;
+
+            &__btn {
+                width: 100px;
+                height: 100px;
+                font-size: 2rem;
+            }
+
+            &__inner {
+                bottom: 30px;
+
+                &__text {
+                    font-weight: 600;
+                    font-size: 90px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .mainFooter {
+        &__question {
+            &__btn {
+                width: 90px;
+                height: 90px;
+                font-size: 1.5rem;
+            }
+
+            &__inner {
+                bottom: 20px;
+
+                &__text {
+                    font-weight: 500;
+                    font-size: 80px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(-5%);
+    }
+
+    100% {
+        transform: translateX(calc(-2500px - 5%));
     }
 }
 
