@@ -28,7 +28,7 @@ const Intro = () => {
     React.useEffect(() => {
         const timer = setTimeout(() => {
             setModal(true);
-        }, 1000);
+        }, 4000);
 
         return () => clearTimeout(timer);
     }, []);
