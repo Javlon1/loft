@@ -8,9 +8,12 @@ import me from "../../../../public/img/logo.svg"
 import topbar from "../../../../public/img/topbar.png"
 import Language from '../../ui/language/Language';
 import MyContainer from '../../ui/MyContainer/MyContainer';
+import uz from '../../../../public/img/uz.svg'
+import ru from '../../../../public/img/ru.svg'
+import en from '../../../../public/img/en.svg'
 
 const Header = () => {
-    const { lan } = React.useContext(Context);
+    const { lan, setLan } = React.useContext(Context);
     const { pathname } = useRouter();
 
     const [headerData] = React.useState([{ id: 1, link: '/', nav_en: 'CATALOG', nav_ru: 'КАТАЛОГ', nav_uz: 'KATALOG', }, { id: 2, link: '/users', nav_en: 'VIDEO REVIEWS', nav_ru: 'ВИДЕО ОБЗОРЫ', nav_uz: 'VIDEO SHARHLAR', }, { id: 3, link: '/accepted', nav_en: 'REVIEWS', nav_ru: 'ОТЗЫВЫ', nav_uz: 'SHARHLAR', }, { id: 4, link: '/warehouse', nav_en: 'CONTACTS', nav_ru: 'КОНТАКТЫ', nav_uz: 'KONTAKTLAR', }]);
@@ -188,6 +191,32 @@ const Header = () => {
             </div>
             <div className={`${styles.menu} ${menu ? styles.menuAct : ""}`}>
                 <div className={styles.menu__center}>
+                    <ul className={styles.menu__center__lan}>
+                        <li onClick={() => setLan('uz')} className={styles.menu__center__lan__item}>
+                            <Image
+                                width={30}
+                                height={30}
+                                src={uz}
+                                alt='uz'
+                            />
+                        </li>
+                        <li onClick={() => setLan('ru')} className={styles.menu__center__lan__item}>
+                            <Image
+                                width={30}
+                                height={30}
+                                src={ru}
+                                alt='ru'
+                            />
+                        </li>
+                        <li onClick={() => setLan('en')} className={styles.menu__center__lan__item}>
+                            <Image
+                                width={30}
+                                height={30}
+                                src={en}
+                                alt='en'
+                            />
+                        </li>
+                    </ul>
                     {
                         barTitle?.map((item) => (
                             <p className={styles.menu__center__title} key={item.id}>

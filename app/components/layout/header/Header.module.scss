@@ -280,6 +280,7 @@
         left: 0;
         height: 100vh;
 
+
         &__center {
             display: flex;
             flex-direction: column;
@@ -290,8 +291,15 @@
             overflow-y: scroll;
             padding-bottom: 2rem;
 
+            &__lan {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+            }
+
             &__title {
-                margin-top: 2rem;
+                margin-top: 1rem;
                 font-size: 2rem;
                 color: $white;
                 font-weight: 600;

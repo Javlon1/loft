@@ -5,6 +5,7 @@ import { Context } from '@/app/components/ui/Context/Context';
 import About from '@/app/components/screens/home/About/About';
 import Products from '@/app/components/screens/home/Products/Products';
 import Benefit from '@/app/components/screens/home/Benefit/Benefit';
+import By from '@/app/components/screens/home/By/By';
 
 const Index = () => {
     const { lan } = React.useContext(Context);
@@ -37,6 +38,7 @@ const Index = () => {
             <About />
             <Products />
             <Benefit />
+            <By />
         </>
     )
 }
