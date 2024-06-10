@@ -1,5 +1,73 @@
 @import "../../../../assets/variables";
 
 .blog {
+    padding: 100px 0;
     background-color: $black;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+
+        &__title {
+            color: $white;
+            @include content;
+        }
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            &__cart {
+                flex: 1;
+                min-width: 250px;
+                height: 400px;
+                padding: .5rem;
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                &__img {
+                    width: 100%;
+                    height: 90%;
+
+                    img {
+                        width: 100%;
+                        height: 350px;
+                    }
+
+                }
+
+                b {
+                    color: $white;
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &__link {
+            margin-top: 1rem;
+            width: 200px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            background-color: $black;
+            color: $white;
+            border: 2px solid $white;
+            transition: $transition;
+
+            &:hover {
+                background-color: $white;
+                color: $black;
+            }
+        }
+    }
 }

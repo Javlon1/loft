@@ -27,7 +27,7 @@ const Header = () => {
     const [menu, setMenu] = React.useState(false)
 
     return (
-        <header data-aos="zoom-in" className={styles.header}>
+        <header className={styles.header}>
             <MyContainer>
                 <nav className={styles.header__nav}>
                     <div className={styles.header__nav__logo}>
