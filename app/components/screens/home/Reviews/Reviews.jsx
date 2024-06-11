@@ -53,7 +53,7 @@ const Reviews = () => {
                     <ul className={styles.reviews__item__list}>
                         {
                             reviewData?.map((item) => (
-                                <li data-aos="fade-up" className={styles.reviews__item__list__item}>
+                                <li key={item.id} data-aos="fade-up" className={styles.reviews__item__list__item}>
                                     <div className={styles.header}>
                                         <Image
                                             src={item.img}

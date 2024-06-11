@@ -65,7 +65,7 @@ const Intro = () => {
         <section className={styles.intro}>
             <div className={`${styles.loader} ${styles.animating} ${disable ? styles.disable : ""}`}>
                 <svg width="383" height="436" viewBox="0 0 383 436" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="100" fill="white" stroke="white" stroke-width="2">ASA</text>
+                    <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fontFamily="Arial" fontSize="100" fill="white" stroke="white" strokeWidth="2">ASA</text>
                 </svg>
             </div>
             <div
@@ -143,6 +143,7 @@ const Intro = () => {
                         <Image
                             src={slayd1}
                             alt='slayd'
+                            priority
                         />
                         {introTitle?.map((item) => (
                             <strong className={styles.intro__title} key={item.id}>
@@ -154,6 +155,7 @@ const Intro = () => {
                         <Image
                             src={slayd2}
                             alt='slayd'
+                            priority
                         />
                         {introTitle?.map((item) => (
                             <strong className={styles.intro__title} key={item.id}>
@@ -165,6 +167,7 @@ const Intro = () => {
                         <Image
                             src={slayd1}
                             alt='slayd'
+                            priority
                         />
                         {introTitle?.map((item) => (
                             <strong className={styles.intro__title} key={item.id}>
@@ -176,6 +179,7 @@ const Intro = () => {
                         <Image
                             src={slayd2}
                             alt='slayd'
+                            priority
                         />
                         {introTitle?.map((item) => (
                             <strong className={styles.intro__title} key={item.id}>

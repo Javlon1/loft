@@ -50,6 +50,7 @@ const Blog = () => {
                                         <Image
                                             src={item.image}
                                             alt='slayd'
+                                            priority
                                         />
                                     </Link>
                                     <Link
@@ -93,6 +94,7 @@ const Blog = () => {
                                         <Image
                                             src={item.image}
                                             alt='slayd'
+                                            priority
                                         />
                                     </Link>
                                     <Link

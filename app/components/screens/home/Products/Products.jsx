@@ -190,6 +190,7 @@ const Products = () => {
                                                 <Image
                                                     src={item.image}
                                                     alt='slayd'
+                                                    priority
                                                 />
                                             </Link>
                                             <b>{item[`name_${lan}`]}</b>
