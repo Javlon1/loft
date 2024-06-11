@@ -3,24 +3,12 @@
 .intro {
     padding: 100px 0;
 
-
     &__item {
         display: flex;
         flex-direction: column;
         gap: 30px;
         align-items: center;
         justify-content: center;
-
-        .ellipse__el {
-            position: fixed;
-            left: 0;
-            top: 100vh;
-            width: 100%;
-            height: 100vh;
-            z-index: 1000;
-            background-color: #000;
-            animation: loader 1.5s backwards;
-        }
 
         &__title {
             @include title;
@@ -112,15 +100,3 @@
         }
     }
 }
-
-@keyframes loader {
-    0% {
-      top: 100vh;
-    }
-    50% {
-      top: 0;
-    }
-    100% {
-      top: -100vh;
-    }
-  }

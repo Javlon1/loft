@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from './Intro.module.scss'
 import { Context } from '@/app/components/ui/Context/Context';
 import MyContainer from '@/app/components/ui/MyContainer/MyContainer'
+import Ellipse from '../../ui/Ellipse/Ellipse';
 
 
 const Intro = () => {
@@ -44,7 +45,7 @@ const Intro = () => {
         <section className={styles.intro}>
             <MyContainer>
                 <div className={styles.intro__item}>
-                    <div class={styles.ellipse__el}></div>
+                    <Ellipse />
                     <h1 className={styles.intro__item__title}>{title[lan]}</h1>
                     <div className={styles.intro__item__list}>
                         <div className={styles.intro__item__list__address}>
