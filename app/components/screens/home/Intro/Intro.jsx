@@ -21,6 +21,7 @@ const Intro = () => {
     const [modalBtn] = React.useState([{ id: 1, nav_en: 'Leave a request', nav_ru: 'Оставьте заявку', nav_uz: "So'rov qoldirish", }]);
     const [modalFormBtn] = React.useState([{ id: 1, nav_en: 'Send', nav_ru: 'Отправить', nav_uz: "Yuborish", }]);
     const [modal, setModal] = React.useState(false)
+    const [disable, setDisable] = React.useState(false)
     const [modalForm, setModalForm] = React.useState(false)
     const [inputValue1, setInputValue1] = React.useState('');
     const [inputValue2, setInputValue2] = React.useState('');
@@ -28,7 +29,15 @@ const Intro = () => {
     React.useEffect(() => {
         const timer = setTimeout(() => {
             setModal(true);
-        }, 4000);
+        }, 10000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => {
+            setDisable(true);
+        }, 2500);
 
         return () => clearTimeout(timer);
     }, []);
@@ -54,7 +63,11 @@ const Intro = () => {
 
     return (
         <section className={styles.intro}>
-
+            <div className={`${styles.loader} ${styles.animating} ${disable ? styles.disable : ""}`}>
+                <svg width="383" height="436" viewBox="0 0 383 436" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="100" fill="white" stroke="white" stroke-width="2">ASA</text>
+                </svg>
+            </div>
             <div
                 className={`${styles.modalOpacity} ${modal ? styles.actModal : ""}`}
                 onClick={() => {

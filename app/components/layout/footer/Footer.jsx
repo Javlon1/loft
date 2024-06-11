@@ -177,6 +177,7 @@ const Footer = () => {
                                     </Link>
                                 </li>
                             </ul>
+                            <p className={styles.mainFooter__footer__list__links__asa}>ASA</p>
                         </div>
                     </div>
                 </MyContainer>

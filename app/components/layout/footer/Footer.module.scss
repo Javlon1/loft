@@ -141,7 +141,13 @@
             &__links {
                 display: flex;
                 flex-direction: column;
-                gap: 20px;
+                gap: 30px;
+
+                &__asa {
+                    color: $gray;
+                    @include title;
+                    font-weight: 600;
+                }
 
                 &__title {
                     color: $white;

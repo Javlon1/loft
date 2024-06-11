@@ -3,6 +3,30 @@
 .intro {
     width: 100%;
 
+    .loader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 99999;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        transition: 0.5s ease-in-out;
+        animation: DASH3 3s forwards;
+
+        svg {
+            path {
+                fill-opacity: 0;
+                stroke-width: 2;
+                stroke-dasharray: 2000;
+                stroke-dashoffset: 2000;
+            }
+        }
+    }
+
     .modalOpacity {
         min-width: 100%;
         min-height: 100%;
@@ -247,4 +271,35 @@
 
 .modalNone {
     display: none !important;
+}
+
+.animating {
+    svg text {
+        animation: DASH3 3s forwards;
+        stroke-dasharray: 400;
+        stroke-dashoffset: 400;
+        fill-opacity: 0;
+    }
+}
+
+@keyframes DASH3 {
+    0% {
+        stroke-dashoffset: 400;
+        fill-opacity: 0;
+    }
+
+    70% {
+        stroke-dashoffset: 0;
+        fill-opacity: 0;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill-opacity: 1;
+    }
+}
+
+.disable {
+    opacity: 0;
+    visibility: hidden;
 }
