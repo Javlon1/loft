@@ -3,7 +3,7 @@ import styles from './Ellipse.module.scss'
 const Ellipse = () => {
 
     return (
-        <div class={styles.ellipse__el}></div>
+        <div className={styles.ellipse__el}></div>
     )
 }
 
