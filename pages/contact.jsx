@@ -22,10 +22,11 @@ const Contact = () => {
                 <meta property="og:title" content="asa.loft | contatc" /> // Название страницы
                 <meta property="og:description" content="" /> // Описание страницы
                 <meta property="og:image" content="" /> // URL для img: https://example.com/image.jpg
-                <meta property="og:url" content="" /> // оснавное URL: https://example.com/page-url
+                <meta property="og:url" content="https://loft-beryl.vercel.app/" /> // оснавное URL: https://example.com/page-url
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="" /> // Название сайта
                 <meta property="og:locale" content="ru_RU" />
+                <link rel="canonical" href="https://loft-beryl.vercel.app/" />
 
                 <title>Loft | {title[lan]}</title>
             </Head>
