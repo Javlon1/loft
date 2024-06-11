@@ -24,6 +24,7 @@
             color: $black;
             font-size: 4rem;
             background-color: $white;
+            
 
             i {
                 z-index: 2;
@@ -91,7 +92,7 @@
             display: flex;
             justify-content: space-between;
             gap: 30px;
-            align-items: start;
+            align-items: flex-start;
             flex-wrap: wrap;
 
             &__logo {

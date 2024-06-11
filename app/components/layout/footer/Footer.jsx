@@ -46,9 +46,6 @@ const Footer = () => {
         ]
     );
 
-
-
-
     return (
         <div className={styles.mainFooter}>
             <Link href={'/contact'}>

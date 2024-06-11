@@ -384,7 +384,7 @@
             padding: 0 1rem;
 
             &__center {
-                align-items: start;
+                align-items: flex-start;
 
                 &__title {
                     font-size: 1.5rem;
@@ -395,7 +395,7 @@
                 }
 
                 &__list {
-                    align-items: start;
+                    align-items: flex-start;
                 }
             }
         }
