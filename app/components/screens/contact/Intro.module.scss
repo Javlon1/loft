@@ -1,0 +1,129 @@
+@import "../../../assets/variables";
+
+.intro {
+    padding: 100px 0;
+
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+
+        .ellipse__el {
+            position: fixed;
+            left: 0;
+            top: 100vh;
+            width: 100%;
+            height: 100vh;
+            z-index: 1000;
+            background-color: #000;
+            animation: loader 1.5s backwards;
+        }
+
+        &__title {
+            @include title;
+            font-weight: 500;
+        }
+
+        &__list {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            &__map {
+                flex: 1;
+            }
+
+            &__address {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                padding: 2rem;
+                background-color: #F5F5F5;
+
+                &__item {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+
+                    i {
+                        font-size: 2rem;
+                    }
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        p {
+                            font-size: 1rem;
+                        }
+
+                        a,
+                        b {
+                            color: $black;
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .intro {
+        padding: 50px 0;
+
+        &__item {
+            &__list {
+                flex-direction: column;
+
+                &__map {
+                    iframe {
+                        height: 300px;
+                    }
+                }
+
+                &__address {
+                    padding: 1rem;
+                    padding-bottom: 2rem;
+
+                    &__item {
+                        i {
+                            font-size: 1.5rem;
+                        }
+
+                        div {
+                            gap: 0px;
+
+                            a,
+                            b {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes loader {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: 50vh;
+    }
+
+    100% {
+        top: -100vh;
+    }
+}

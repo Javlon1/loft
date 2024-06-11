@@ -15,7 +15,7 @@ const Footer = () => {
     const [introTitle] = React.useState([{ id: 1, nav_en: 'FURNITURE IN LOFT STYLE', nav_ru: 'МЕБЕЛЬ В СТИЛЕ ЛОФТ', nav_uz: 'LOFT STILDAGI MEBELAR', }]);
     const [menuTitle] = React.useState([{ id: 1, nav_en: 'PAGES', nav_ru: 'СТРАНИЦЫ', nav_uz: 'SAHIFALAR', }]);
     const [barTitle] = React.useState([{ id: 1, nav_en: 'CATALOG', nav_ru: 'КАТАЛОГ', nav_uz: 'KATALOG', }]);
-    const [headerData] = React.useState([{ id: 1, link: '/', nav_en: 'CATALOG', nav_ru: 'КАТАЛОГ', nav_uz: 'KATALOG', }, { id: 2, link: '/users', nav_en: 'VIDEO REVIEWS', nav_ru: 'ВИДЕО ОБЗОРЫ', nav_uz: 'VIDEO SHARHLAR', }, { id: 3, link: '/accepted', nav_en: 'REVIEWS', nav_ru: 'ОТЗЫВЫ', nav_uz: 'SHARHLAR', }, { id: 4, link: '/warehouse', nav_en: 'CONTACTS', nav_ru: 'КОНТАКТЫ', nav_uz: 'KONTAKTLAR', }]);
+    const [headerData] = React.useState([{ id: 1, link: '/', nav_en: 'CATALOG', nav_ru: 'КАТАЛОГ', nav_uz: 'KATALOG', }, { id: 2, link: '/users', nav_en: 'VIDEO REVIEWS', nav_ru: 'ВИДЕО ОБЗОРЫ', nav_uz: 'VIDEO SHARHLAR', }, { id: 3, link: '/accepted', nav_en: 'REVIEWS', nav_ru: 'ОТЗЫВЫ', nav_uz: 'SHARHLAR', }, { id: 4, link: '/contact', nav_en: 'CONTACTS', nav_ru: 'КОНТАКТЫ', nav_uz: 'KONTAKTLAR', }]);
     const [bardata] = React.useState([{ id: 1, link: '/', nav_en: 'TABLES AND CHAIRS', nav_ru: 'СТОЛЫ И СТУЛЬЯ', nav_uz: 'Stol va kursilar', }, { id: 2, link: '/', nav_en: 'RACKS', nav_ru: 'СТЕЛЛАЖИ', nav_uz: 'REKLAR', }, { id: 3, link: '/', nav_en: 'FURNITURE', nav_ru: 'МЯГКАЯ МЕБЕЛЬ', nav_uz: 'YUMSHOQ MEBEL', }, { id: 4, link: '/', nav_en: 'TABLES', nav_ru: 'ЖУРНАЛЬНЫЕ СТОЛИКИ', nav_uz: 'STOLLAR', }]);
     const [questiondata] = React.useState(
         [
@@ -51,7 +51,7 @@ const Footer = () => {
 
     return (
         <div className={styles.mainFooter}>
-            <Link href={'/'}>
+            <Link href={'/contact'}>
                 <div className={styles.mainFooter__question}>
                     <span className={styles.mainFooter__question__btn}>
                         <i className="fa-solid fa-arrow-right-long"></i>

@@ -20,6 +20,10 @@
             align-items: center;
             gap: 20px;
 
+            img {
+                object-fit: contain;
+            }
+
             button {
                 display: flex;
                 align-items: center;
@@ -350,8 +354,6 @@
             }
 
             img {
-                width: 100px;
-                height: 40px;
                 object-fit: contain;
             }
 
