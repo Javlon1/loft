@@ -117,8 +117,8 @@ const Intro = () => {
                             {item[`nav_${lan}`]}
                         </p>
                     ))}
-                    <input type="text" placeholder='Ваше Имя' value={inputValue1} onChange={handleInputChange1} />
-                    <input type="text" placeholder='Ваше Телефон' value={inputValue2} onChange={handleInputChange2} />
+                    <input type="text" maxLength={20} placeholder='Ваше Имя' value={inputValue1} onChange={handleInputChange1} />
+                    <input type="text" maxLength={20} placeholder='Ваше Телефон' value={inputValue2} onChange={handleInputChange2} />
                     {modalFormBtn?.map((item) => (
                         <button type='submit' className={styles.modal__body__link} key={item.id}>
                             {item[`nav_${lan}`]}
