@@ -197,6 +197,7 @@ const Intro = () => {
                 <div className={styles['swiper-pagination-custom']}></div>
             </div>
 
+            <h1>asa.loft</h1>
         </section>
     )
 }
