@@ -37,7 +37,7 @@ const Intro = () => {
     React.useEffect(() => {
         const timer = setTimeout(() => {
             setDisable(true);
-        }, 2500);
+        }, 3000);
 
         return () => clearTimeout(timer);
     }, []);
