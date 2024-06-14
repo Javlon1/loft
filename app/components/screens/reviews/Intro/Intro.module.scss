@@ -1,0 +1,101 @@
+@import "../../../../assets/variables";
+
+.intro {
+    background-color: $black;
+    padding: 100px 0;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+
+
+        &__title {
+            color: $white;
+            text-align: center;
+            @include title;
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            &__item {
+                padding: 2rem 5rem;
+                background-color: $white;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+
+                &__left {
+                    display: flex;
+                    align-items: start;
+                    gap: 1rem;
+                }
+
+                p {
+                    width: 55%;
+                }
+            }
+        }
+
+        &__btn {
+            padding: .4rem 4rem;
+            display: block;
+            background-color: $black;
+            border: 2px solid $white;
+            color: $white;
+            cursor: pointer;
+            transition: $transition;
+            @include content;
+
+            &:hover {
+                background-color: $white;
+                color: $black;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .intro {
+        padding: 50px 0;
+
+        &__item {
+            &__list {
+                gap: 20px;
+
+                &__item {
+                    padding: 1rem;
+
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 565px) {
+    .intro {
+        padding: 50px 0;
+
+        &__item {
+            &__list {
+                gap: 20px;
+
+                &__item {
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

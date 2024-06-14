@@ -1,21 +1,14 @@
 import * as React from 'react'
 import Head from 'next/head'
-import Intro from '@/app/components/screens/home/Intro/Intro';
 import { Context } from '@/app/components/ui/Context/Context';
-import About from '@/app/components/screens/home/About/About';
-import Products from '@/app/components/screens/home/Products/Products';
-import Benefit from '@/app/components/screens/home/Benefit/Benefit';
-import By from '@/app/components/screens/home/By/By';
-import Reviews from '@/app/components/screens/home/Reviews/Reviews';
-import Interest from '@/app/components/screens/home/Interest/Interest';
-import Blog from '@/app/components/screens/home/Blog/Blog';
+import Detail from '@/app/components/screens/reviews/detail/detail';
 
-const Index = () => {
+const Feedback = () => {
     const { lan } = React.useContext(Context);
     const [title] = React.useState({
-        en: 'Main',
-        ru: 'Главная',
-        uz: 'Asosiy'
+        en: 'Feedback',
+        ru: 'Оставить отзыв',
+        uz: 'Fikr qoldiring'
     });
     return (
         <>
@@ -26,7 +19,7 @@ const Index = () => {
                 <meta name="keywords" content="" /> // ключевые слова, страницы
                 <meta name="image_src" content="" /> // URL для img
 
-                <meta property="og:title" content="ASA.Loft | Main" /> // Название страницы
+                <meta property="og:title" content="ASA.Loft | Feedback" /> // Название страницы
                 <meta property="og:description" content="" /> // Описание страницы
                 <meta property="og:image" content="" /> // URL для img: https://example.com/image.jpg
                 <meta property="og:url" content="https://loft-beryl.vercel.app/" /> // оснавное URL: https://example.com/page-url
@@ -38,16 +31,9 @@ const Index = () => {
                 <title>ASA.Loft | {title[lan]}</title>
             </Head>
 
-            <Intro />
-            <About />
-            <Products />
-            <Benefit />
-            <By />
-            <Reviews />
-            <Interest />
-            <Blog />
+            <Detail />
         </>
     )
 }
 
-export default Index;
+export default Feedback;
