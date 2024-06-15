@@ -6,6 +6,7 @@ import { Context } from '@/app/components/ui/Context/Context';
 import MyContainer from '@/app/components/ui/MyContainer/MyContainer'
 import Ellipse from '@/app/components/ui/Ellipse/Ellipse';
 import video from '../../../../../public/img/slayd2.png'
+import { useRouter } from 'next/router';
 
 const Intro = () => {
     const { lan } = React.useContext(Context);
@@ -38,7 +39,7 @@ const Intro = () => {
             title: "Item Five",
         }
     ]);
-
+    const router = useRouter()
 
     return (
         <section className={styles.intro}>
@@ -49,7 +50,18 @@ const Intro = () => {
                     <div className={styles.intro__item__list}>
                         {
                             data?.map((item) => (
-                                <div key={item.id} className={styles.intro__item__list__item}>
+                                <div
+                                    onClick={() => {
+                                        router.push({
+                                            pathname: '/reviewes-detail',
+                                            // query: {
+                                            //     id: item.id
+                                            // }
+                                        })
+                                    }}
+                                    key={item.id}
+                                    className={styles.intro__item__list__item}
+                                >
                                     <Image
                                         src={item.img}
                                         alt='user'
