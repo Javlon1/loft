@@ -28,7 +28,7 @@
                 flex-direction: column;
                 gap: 20px;
                 overflow: hidden;
-                width: 48%;
+                width: 47%;
 
                 img {
                     width: 100%;
@@ -61,11 +61,8 @@
                 gap: 20px;
 
                 &__item {
+                    width: 100%;
                     padding: 1rem;
-
-                    p {
-                        width: 100%;
-                    }
                 }
             }
         }
@@ -79,12 +76,6 @@
         &__item {
             &__list {
                 gap: 20px;
-
-                &__item {
-                    p {
-                        width: 100%;
-                    }
-                }
             }
         }
     }
