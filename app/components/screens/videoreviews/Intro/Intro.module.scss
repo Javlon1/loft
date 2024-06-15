@@ -1,0 +1,91 @@
+@import "../../../../assets/variables";
+
+.intro {
+    background-color: $black;
+    padding: 100px 0;
+
+    &__item {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+
+
+        &__title {
+            color: $white;
+            text-align: center;
+            @include title;
+        }
+
+        &__list {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+
+            &__item {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                overflow: hidden;
+                width: 48%;
+
+                img {
+                    width: 100%;
+                    height: 400px;
+                    transition: $transition;
+                }
+
+                &:hover {
+                    img {
+                        transform: scale(1.2);
+                    }
+                }
+
+                p {
+                    color: $white;
+                    @include content;
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .intro {
+        padding: 50px 0;
+
+        &__item {
+            &__list {
+                gap: 20px;
+
+                &__item {
+                    padding: 1rem;
+
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 565px) {
+    .intro {
+        padding: 50px 0;
+
+        &__item {
+            &__list {
+                gap: 20px;
+
+                &__item {
+                    p {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
