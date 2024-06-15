@@ -51,6 +51,7 @@ const Intro = () => {
                         {
                             data?.map((item) => (
                                 <div
+                                    data-aos="fade-up"
                                     onClick={() => {
                                         router.push({
                                             pathname: '/reviewes-detail',
