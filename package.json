@@ -1,5 +1,5 @@
 {
-  "name": "admin",
+  "name": "loft",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,13 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "aos": "^2.3.4",
-    "next": "14.0.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-paginate": "^8.2.0",
-    "sass": "^1.69.5",
-    "sitemap": "^7.1.1",
-    "swiper": "^11.1.4"
+    "next": "^13.4.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-paginate": "^9.0.0",
+    "sass": "^1.70.0",
+    "sitemap": "^8.0.2",
+    "swiper": "^11.2.0"
   }
 }
