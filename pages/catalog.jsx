@@ -8,8 +8,8 @@ const Catalog = () => {
     const { lan } = React.useContext(Context);
     const [title] = React.useState({
         en: 'Catalog',
-        ru: 'Главная',
-        uz: 'Asosiy'
+        ru: 'Каталог',
+        uz: 'Katalog'
     });
     return (
         <>

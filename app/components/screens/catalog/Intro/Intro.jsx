@@ -1,16 +1,15 @@
 import React, { useContext, useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import styles from './Intro.module.scss'; // импорт стилей из Intro.module.scss
+import styles from './Intro.module.scss'; 
 import video from '../../../../../public/img/slayd2.png';
 import Item from '../Item/Item';
 import ReactPaginate from 'react-paginate';
-import { Context } from '@/app/components/ui/Context/Context';
-import MyContainer from '@/app/components/ui/MyContainer/MyContainer';
+import { Context } from '../../../ui/Context/Context';
+import MyContainer from '../../../ui/MyContainer/MyContainer';
 
 const Intro = () => {
     const { lan } = useContext(Context);
-    const [title] = useState({ en: 'Video reviews', ru: 'Видео обзоры', uz: 'Video sharhlar' });
+    const [title] = useState({ en: 'Catalog', ru: 'Каталог', uz: 'Katalog' });
     const [projects] = useState([
         { id: 1, name: "inware", link: "/", img: video },
         { id: 2, name: "test", link: "/", img: video },
@@ -34,6 +33,7 @@ const Intro = () => {
         { id: 2, name: "test", link: "/", img: video },
         
     ]);
+
     const [currentPage, setCurrentPage] = useState(1);
     const countriesPerPage = 4;
 
