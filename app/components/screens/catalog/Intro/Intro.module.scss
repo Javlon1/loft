@@ -1,0 +1,34 @@
+@import "../../../../assets/variables";
+
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .el {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $gray;
+        font-weight: 600;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            background-color: $black;
+            color: $white;
+        }
+    }
+}
+
+.red{
+    background-color: $black;
+}
+
+.act {
+    background-color: $black;
+    color: $white;
+}
