@@ -66,9 +66,9 @@ const Intro = () => {
                         containerClassName={styles.pagination}
                         pageClassName={styles.el} 
                         pageLinkClassName={styles.el} 
-                        previousClassName={styles.red} 
+                        previousClassName={styles.btn} 
                         previousLinkClassName={styles.el} 
-                        nextClassName={styles.red}
+                        nextClassName={styles.btn}
                         nextLinkClassName={styles.el} 
                         breakClassName={styles.el}
                         breakLinkClassName={styles.el}
