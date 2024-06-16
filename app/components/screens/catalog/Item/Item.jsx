@@ -22,6 +22,7 @@ const Item = ({ data }) => {
                             height={200}
                             src={item.img}
                             alt='catalog'
+                            priority
                         />
                         <p>
                             {item.name}
