@@ -9,31 +9,45 @@ import MyContainer from '../../../ui/MyContainer/MyContainer';
 
 const Intro = () => {
     const { lan } = useContext(Context);
-    const [title] = useState({ en: 'Catalog', ru: 'Каталог', uz: 'Katalog' });
+    const [title] = useState({ en: 'Sort', ru: 'Сортировка', uz: 'Tartiblash' });
     const [projects] = useState([
-        { id: 1, name: "inware", link: "/", img: video },
-        { id: 2, name: "test", link: "/", img: video },
-        { id: 3, name: "inware", link: "/", img: video },
-        { id: 4, name: "test", link: "/", img: video },
-        { id: 5, name: "inware", link: "/", img: video },
-        { id: 6, name: "test", link: "/", img: video },
-        { id: 7, name: "inware", link: "/", img: video },
-        { id: 8, name: "test", link: "/", img: video },
-        { id: 9, name: "inware", link: "/", img: video },
-        { id: 10, name: "test", link: "/", img: video },
-        { id: 11, name: "inware", link: "/", img: video },
-        { id: 12, name: "test", link: "/", img: video },
-        { id: 13, name: "inware", link: "/", img: video },
-        { id: 14, name: "test", link: "/", img: video },
-        { id: 15, name: "inware", link: "/", img: video },
-        { id: 16, name: "test", link: "/", img: video },
-        { id: 17, name: "inware", link: "/", img: video },
-        { id: 18, name: "test", link: "/", img: video },
-        { id: 19, name: "inware", link: "/", img: video },
-        { id: 20, name: "test", link: "/", img: video },
+        { id: 1, name: "Столы и стулья", link: "/", img: video, price: 100 },
+        { id: 2, name: "Стеллажи", link: "/", img: video, price: 150 },
+        { id: 3, name: "Мягкая мебель", link: "/", img: video, price: 200 },
+        { id: 4, name: "Журнальные столики", link: "/", img: video, price: 120 },
+        { id: 5, name: "Столы и стулья", link: "/", img: video, price: 180 },
+        { id: 6, name: "Стеллажи", link: "/", img: video, price: 250 },
+        { id: 7, name: "Мягкая мебель", link: "/", img: video, price: 170 },
+        { id: 8, name: "Журнальные столики", link: "/", img: video, price: 220 },
+        { id: 9, name: "Столы и стулья", link: "/", img: video, price: 300 },
+        { id: 10, name: "Стеллажи", link: "/", img: video, price: 280 },
+        { id: 11, name: "Мягкая мебель", link: "/", img: video, price: 240 },
+        { id: 12, name: "Журнальные столики", link: "/", img: video, price: 260 },
+        { id: 13, name: "Столы и стулья", link: "/", img: video, price: 350 },
+        { id: 14, name: "Стеллажи", link: "/", img: video, price: 320 },
+        { id: 15, name: "Мягкая мебель", link: "/", img: video, price: 380 },
+        { id: 16, name: "Журнальные столики", link: "/", img: video, price: 400 },
+        { id: 17, name: "Столы и стулья", link: "/", img: video, price: 420 },
+        { id: 18, name: "Стеллажи", link: "/", img: video, price: 390 },
+        { id: 19, name: "Мягкая мебель", link: "/", img: video, price: 360 },
+        { id: 20, name: "Журнальные столики", link: "/", img: video, price: 430 },
     ]);
 
     const [currentPage, setCurrentPage] = useState(1);
+    const [priceFilter, setPriceFilter] = useState('all');
+    const [typeFilter, setTypeFilter] = useState('Столы и стулья');
+    const [barTitle] = useState([
+        { id: 1, type: 'Столы и стулья', nav_en: 'Tables & Chairs', nav_ru: 'Столы и стулья', nav_uz: 'Stollar va o\'rindoshlar' },
+        { id: 2, type: 'Стеллажи', nav_en: 'Shelves', nav_ru: 'Стеллажи', nav_uz: 'Etajerlar' },
+        { id: 3, type: 'Мягкая мебель', nav_en: 'Upholstered Furniture', nav_ru: 'Мягкая мебель', nav_uz: 'Miyok mebel' },
+        { id: 4, type: 'Журнальные столики', nav_en: 'Coffee Tables', nav_ru: 'Журнальные столики', nav_uz: 'Kofe stollar' }
+    ]);
+
+    const handleTypeFilterChange = (type) => {
+        setTypeFilter(type);
+        setCurrentPage(1);
+    };
+
     const countriesPerPage = 4;
 
     const handlePageClick = ({ selected }) => {
@@ -41,17 +55,61 @@ const Intro = () => {
         setCurrentPage(currentPage);
     };
 
+    const handlePriceFilterChange = (e) => {
+        setPriceFilter(e.target.value);
+        setCurrentPage(1);
+    };
+
+
+    const filteredProjectsByPrice = priceFilter === 'all' ? projects : projects.filter(project => {
+        return project.price <= parseInt(priceFilter);
+    });
+
+    const filteredProjectsByType = typeFilter === 'all' ? filteredProjectsByPrice : filteredProjectsByPrice.filter(project =>
+        project.name === typeFilter
+    );
+
     const indexOfLastProject = currentPage * countriesPerPage;
     const indexOfFirstProject = indexOfLastProject - countriesPerPage;
-    const currentProjects = projects.slice(indexOfFirstProject, indexOfLastProject);
+    const currentProjects = filteredProjectsByType.slice(indexOfFirstProject, indexOfLastProject);
 
-    const totalProjects = projects.length;
+    const totalProjects = filteredProjectsByType.length;
+
+    const currentType = barTitle.find(item => item.type === typeFilter);
 
     return (
         <section className={styles.intro}>
+
+            <ul className={styles.typeFilter}>
+                {barTitle.map(item => (
+                    <li
+                        key={item.id}
+                        className={typeFilter === item.type ? styles.act : null}
+                        onClick={() => handleTypeFilterChange(item.type)}
+                    >
+                        {item[`nav_${lan}`]}
+                    </li>
+                ))}
+            </ul>
+
             <MyContainer>
                 <div className={styles.intro__item}>
-                    <h1 className={styles.intro__item__title}>{title[lan]}</h1>
+
+                    <h1 className={styles.intro__item__title}>{currentType[`nav_${lan}`]}</h1>
+
+                    <div className={styles.filterSelect}>
+                        <p>{title[lan]}</p>
+                        <select
+                            value={priceFilter}
+                            onChange={handlePriceFilterChange}
+                        >
+                            <option value="all">Все цены</option>
+                            <option value="100">До 100</option>
+                            <option value="200">До 200</option>
+                            <option value="300">До 300</option>
+                            <option value="400">До 400</option>
+                        </select>
+                    </div>
 
                     <Item data={currentProjects} />
 

@@ -1,14 +1,47 @@
 @import "../../../../assets/variables";
 
 .intro {
-    padding: 100px 0;
+    padding: 0 0 100px;
+
+    .typeFilter {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: $gray;
+        padding: 10px 0;
+
+        li {
+            cursor: pointer;
+            padding: .2rem 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
 
     &__item {
-        &__title{
+        &__title {
             text-align: center;
             @include title;
-            margin: 0 0 2rem;
+            margin: 50px 0 2rem;
         }
+
+        .filterSelect {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            padding-bottom: 1rem;
+
+            p {
+                color: $gray;
+            }
+
+            select {
+                border: 1px solid $gray;
+                color: $black;
+                padding: .1rem 1rem;
+            }
+        }
+
         .pagination {
             margin-top: 2rem;
             display: flex;
@@ -34,9 +67,22 @@
         }
     }
 }
-@media only screen and (max-width: 991px){
-    .intro{
-        padding: 50px 0;
+
+@media only screen and (max-width: 991px) {
+    .intro {
+        .typeFilter {
+            padding: 1rem;
+            justify-content: start;
+            gap: 20px;
+
+            li {
+                border: 1px solid $black;
+            }
+        }
+
+        .filterSelect {
+            justify-content: center;
+        }
     }
 }
 

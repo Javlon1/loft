@@ -29,6 +29,7 @@ const CatalogDetail = () => {
 
                 <title>ASA.Loft | {title[lan]}</title>
             </Head>
+            
             <h1>Catalog Detail Page</h1>
         </>
     )
