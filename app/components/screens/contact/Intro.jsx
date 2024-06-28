@@ -24,7 +24,7 @@ const Intro = () => {
         {
             id: 2,
             titel: "Ориентир",
-            name: "Паркентский рынок",
+            name: "Shahid tepa Mosti",
             icon: "fa-regular fa-map"
         },
         {
