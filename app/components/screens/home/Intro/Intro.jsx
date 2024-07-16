@@ -29,7 +29,7 @@ const Intro = () => {
     React.useEffect(() => {
         const timer = setTimeout(() => {
             setModal(true);
-        }, 6000);
+        }, 10000);
 
         return () => clearTimeout(timer);
     }, []);
@@ -136,7 +136,13 @@ const Intro = () => {
                         nextEl: `.${styles['swiper-button-next-custom']}`,
                         prevEl: `.${styles['swiper-button-prev-custom']}`
                     }}
-                    pagination={{ clickable: true, el: `.${styles['swiper-pagination-custom']}` }}
+                    pagination={{
+                        clickable: true,
+                        el: `.${styles['swiper-pagination-custom']}`,
+                        renderBullet: function (className) {
+                            return `<div class="${className} ${styles['swiper-pagination-bullet']}"></div>`;
+                        }
+                    }}
                     loop={true}
                 >
                     <SwiperSlide>

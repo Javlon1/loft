@@ -12,8 +12,6 @@ import { useRouter } from 'next/router';
 
 const Benefit = () => {
     const { lan } = React.useContext(Context);
-    const router = useRouter();
-    const [benefitData] = React.useState([{ id: 1, nav_uz: 'BIZNING AVZIYATLARIMIZ', nav_ru: 'НАШИ ПРЕИМУЩЕСТВА', nav_en: 'OUR BENEFIT' }]);
     const [data] = React.useState(
         [
             {
@@ -50,13 +48,6 @@ const Benefit = () => {
     return (
         <section className={styles.benefit}>
             <MyContainer>
-                {
-                    benefitData?.map((item) => (
-                        <p data-aos="fade-up" className={styles.benefit__title} key={item.id}>
-                            {item[`nav_${lan}`]}
-                        </p>
-                    ))
-                }
                 <ul className={styles.benefit__list}>
                     {
                         data?.map((item) => (

@@ -80,7 +80,7 @@ const Header = () => {
                         <a href="tel:+998937011723">
                             <i className="fa-solid fa-phone"></i>
                         </a>
-                        <Link href={'/'}>
+                        <Link href={'/cart'}>
                             <i className="fa-solid fa-cart-shopping"></i>
                         </Link>
                     </div>

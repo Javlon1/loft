@@ -1,0 +1,59 @@
+@import "../../../../assets/variables";
+
+.benefit {
+    margin-top: 2rem;
+    background-color: $black;
+    padding: 4rem 0;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        &__item {
+            flex: 1;
+            height: 250px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background-color: $white;
+
+            p {
+                text-align: center;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 991px) {
+    .benefit {
+        padding: 3rem 0;
+
+        &__list {
+            margin-top: 2rem;
+
+            &__item {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 565px) {
+    .benefit {
+        &__list {
+            &__item {
+                width: 50%;
+                height: 250px;
+            }
+        }
+    }
+}

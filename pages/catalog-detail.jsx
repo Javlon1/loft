@@ -1,6 +1,9 @@
 import * as React from 'react'
 import Head from 'next/head'
 import { Context } from '@/app/components/ui/Context/Context';
+import Detail from '@/app/components/screens/catalog/Detail/Detail';
+import Products from '@/app/components/screens/catalog/Product/Product';
+import Benefit from '@/app/components/screens/catalog/Benefit/Benefit';
 
 const CatalogDetail = () => {
     const { lan } = React.useContext(Context);
@@ -29,8 +32,10 @@ const CatalogDetail = () => {
 
                 <title>ASA.Loft | {title[lan]}</title>
             </Head>
-            
-            <h1>Catalog Detail Page</h1>
+
+            <Detail />
+            <Benefit />
+            <Products />
         </>
     )
 }

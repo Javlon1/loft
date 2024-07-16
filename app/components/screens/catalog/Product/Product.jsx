@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link'
 import Image from 'next/image'
-import styles from './Products.module.scss'
+import styles from './Product.module.scss'
 import { Context } from '@/app/components/ui/Context/Context';
 import MyContainer from '@/app/components/ui/MyContainer/MyContainer'
 import { Navigation, Scrollbar, A11y } from 'swiper/modules';
@@ -16,8 +16,7 @@ import slayd2 from '../../../../../public/img/slayd2.png'
 
 const Products = () => {
     const { lan } = React.useContext(Context);
-    const [popularData] = React.useState([{ id: 1, nav_en: 'Popular products', nav_ru: 'Популярные товары', nav_uz: 'Ommabop tovarlar' }]);
-    const [recommendData] = React.useState([{ id: 1, nav_en: 'We recommend', nav_ru: 'Мы рекомендуем', nav_uz: 'Biz tavsiya qilamiz' }]);
+    const [popularData] = React.useState([{ id: 1, nav_en: 'More from this category', nav_ru: 'Еще из этой категории', nav_uz: 'Ushbu turkumdagi tavarlar' }]);
     const [byData] = React.useState([{ id: 1, nav_en: 'Buy', nav_ru: 'Купить', nav_uz: 'Sotib olish' }]);
     const [data] = React.useState(
         [
@@ -132,7 +131,7 @@ const Products = () => {
                 image: slayd2
             }
         ]
-    ) 
+    )
     return (
         <section className={styles.products}>
             <MyContainer>
@@ -191,84 +190,6 @@ const Products = () => {
                                                     src={item.image}
                                                     alt='slayd'
                                                     priority
-                                                />
-                                            </Link>
-                                            <b>{item[`name_${lan}`]}</b>
-                                            <p>{item[`category_${lan}`]}</p>
-                                            <p>{item.price}</p>
-                                            {
-                                                byData?.map((item) => (
-                                                    <Link
-                                                        className={styles.products__item__cart__item__link}
-                                                        href={'/'}
-                                                        key={item.id}
-                                                    >
-                                                        {item[`nav_${lan}`]}
-                                                    </Link>
-                                                ))
-                                            }
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                            ))
-                        }
-                    </Swiper>
-                </div>
-
-                <div className={`${styles.products__item} ${styles.qw}`}>
-                    <div className={styles.products__item__header}>
-                        <div data-aos="fade-up" className={styles.products__item__header__title}>
-                            {
-                                recommendData?.map((item) => (
-                                    <p key={item.id}>
-                                        {item[`nav_${lan}`]}
-                                    </p>
-                                ))
-                            }
-                            <i className="fa-regular fa-thumbs-up"></i>
-                        </div>
-                        <div className={styles.products__item__header__btns}>
-                            <div data-aos="fade-up" className={styles.btn__next2}>
-                                <i className="fa-solid fa-angle-left"></i>
-                            </div>
-                            <div data-aos="fade-up" className={styles.btn__prev2}>
-                                <i className="fa-solid fa-angle-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <Swiper
-                        data-aos="fade-up"
-                        modules={[Navigation, Scrollbar, A11y]}
-                        spaceBetween={10}
-                        navigation={{
-                            prevEl: `.${styles.btn__next2}`,
-                            nextEl: `.${styles.btn__prev2}`,
-                        }}
-                        loop={true}
-                        breakpoints={{
-                            320: {
-                                slidesPerView: 1,
-                            },
-                            768: {
-                                slidesPerView: 2,
-                            },
-                            1024: {
-                                slidesPerView: 4,
-                            },
-                        }}
-                    >
-                        {
-                            data?.map((item) => (
-                                <SwiperSlide key={item.id}>
-                                    <div className={styles.products__item__cart}>
-                                        <div className={styles.products__item__cart__item}>
-                                            <Link
-                                                className={styles.products__item__cart__item__img}
-                                                href={'/'}
-                                            >
-                                                <Image
-                                                    src={item.image}
-                                                    alt='slayd'
                                                 />
                                             </Link>
                                             <b>{item[`name_${lan}`]}</b>
