@@ -9,8 +9,23 @@ import Message from '../../ui/Message/Message';
 
 
 const Cart = () => {
+    const [formData, setFormData] = React.useState({ name: '', telephone: '' });
+    const [backText] = React.useState({ en: 'Back', ru: 'Назад', uz: 'Orqaga' })
+    const [sendText] = React.useState({ en: 'SEND', ru: 'ОТПРАВИТЬ', uz: 'YUBORISH' })
+    const [back, setBack] = React.useState(false)
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form Data:', formData);
+        // Здесь можно добавить код для отправки данных на сервер
+    };
     const router = useRouter();
-    const { cart, setCart, setMessage, messageType, setMessageType,
+    const { lan, cart, setCart, setMessage, messageType, setMessageType,
         messageText, setMessageText } = React.useContext(Context);
     const hanndlerDelCart = () => {
         setCart([])
@@ -85,26 +100,48 @@ const Cart = () => {
                         </div>
                     </div>
                     <div className={styles.cart__item__right}>
-                        <div className={styles.cart__item__right__content}>
-                            <h3>Buyurtmangiz</h3>
-                            <span>Tovarlar soni <b>{cart.length}</b></span>
-                            <span>Jami narxi <b>{totalSum.toLocaleString('en-US').replace(/,/g, ' ')}</b></span>
-                            <button
-                                type='button'
-                                onClick={() => {
-                                    if (cart.length > 0) {
-                                        router.push('/register')
-                                    } else {
-                                        setMessageText("Savatchangiz bo'sh");
-                                        setMessage(true);
-                                        setMessageType('warning');
-                                    }
-                                }}
-                                className={styles.btn}
-                            >
-                                Buyurtma berish
-                            </button>
-                        </div>
+                        {
+                            back ? (
+                                <div className={styles.cart__item__right__content}>
+                                    <h3>Buyurtmangiz</h3>
+                                    <span>Tovarlar soni <b>{cart.length}</b></span>
+                                    <span>Jami narxi <b>{totalSum.toLocaleString('en-US').replace(/,/g, ' ')}</b></span>
+                                    <button
+                                        type='button'
+                                        onClick={() => setBack(!back)}
+                                        className={styles.btn}
+                                    >
+                                        Buyurtma berish
+                                    </button>
+                                </div>
+                            ) : (
+                                <form className={styles.formContainer} onSubmit={handleSubmit}>
+                                    <div onClick={() => setBack(true)} className={styles.formContainer__back}>
+                                        <i className="fa-solid fa-arrow-left"></i>
+                                        <p>{backText[lan]}</p>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        className={styles.inputField}
+                                    />
+                                    <input
+                                        type="text"
+                                        name="telephone"
+                                        placeholder="telephone"
+                                        value={formData.telephone}
+                                        onChange={handleChange}
+                                        className={styles.inputField}
+                                    />
+                                    <button type="submit" className={styles.submitButton}>
+                                        {sendText[lan]}
+                                    </button>
+                                </form>
+                            )
+                        }
                     </div>
                 </div>
             </MyContainer>
