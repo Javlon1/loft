@@ -5,11 +5,12 @@ import styles from './Cart.module.scss'
 import { Context } from '@/app/components/ui/Context/Context';
 import MyContainer from '@/app/components/ui/MyContainer/MyContainer'
 import { useRouter } from 'next/router';
+import Message from '../../ui/Message/Message';
 
 
 const Cart = () => {
     const router = useRouter();
-    const { cart, setCart, message, setMessage, messageType, setMessageType,
+    const { cart, setCart, setMessage, messageType, setMessageType,
         messageText, setMessageText } = React.useContext(Context);
     const hanndlerDelCart = () => {
         setCart([])
@@ -33,7 +34,7 @@ const Cart = () => {
     return (
         <section className={styles.cart}>
             <MyContainer>
-                {/* <Message messages={messageText} type={messageType} /> */}
+                <Message messages={messageText} type={messageType} />
                 <div className={styles.cart__item}>
                     <div className={styles.cart__item__left}>
                         <div className={styles.cart__item__left__content}>

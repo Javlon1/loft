@@ -1,7 +1,7 @@
 @import '../../../assets/variables';
 
 .cart {
-    padding: 4rem;
+    padding: 4rem 0;
 
     &__item {
         display: flex;
@@ -9,6 +9,7 @@
         justify-content: space-between;
         gap: 20px;
         min-height: 40vh;
+        flex-wrap: wrap;
 
 
         &__left {
@@ -189,8 +190,6 @@
 @media screen and (max-width: 991px) {
     .cart {
         &__item {
-            flex-direction: column;
-
             &__left {
                 width: 100%;
             }
@@ -205,8 +204,6 @@
 @media screen and (max-width: 767px) {
     .cart {
         &__item {
-            flex-direction: column;
-
             &__left {
                 &__content {
 
@@ -235,8 +232,6 @@
 @media screen and (max-width: 565px) {
     .cart {
         &__item {
-            flex-direction: column;
-
             &__left {
                 &__content {
                     &__header {

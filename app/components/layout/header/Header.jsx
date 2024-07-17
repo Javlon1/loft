@@ -13,7 +13,7 @@ import ru from '../../../../public/img/ru.svg'
 import en from '../../../../public/img/en.svg'
 
 const Header = () => {
-    const { lan, setLan } = React.useContext(Context);
+    const { lan, setLan, cart } = React.useContext(Context);
     const { pathname } = useRouter();
 
     const [headerData] = React.useState([{ id: 1, link: '/catalog', nav_en: 'CATALOG', nav_ru: 'КАТАЛОГ', nav_uz: 'KATALOG', }, { id: 2, link: '/video-reviews', nav_en: 'VIDEO REVIEWS', nav_ru: 'ВИДЕО ОБЗОРЫ', nav_uz: 'VIDEO SHARHLAR', }, { id: 3, link: '/reviews', nav_en: 'REVIEWS', nav_ru: 'ОТЗЫВЫ', nav_uz: 'SHARHLAR', }, { id: 4, link: '/contact', nav_en: 'CONTACTS', nav_ru: 'КОНТАКТЫ', nav_uz: 'KONTAKTLAR', }]);
@@ -82,13 +82,17 @@ const Header = () => {
                         </a>
                         <Link href={'/cart'}>
                             <i className="fa-solid fa-cart-shopping"></i>
+                            {
+                                (cart?.length > 0) && (
+                                    <span>{cart?.length}</span>
+                                )
+                            }
                         </Link>
                     </div>
                 </nav>
                 <nav className={styles.header__navResponsive}>
                     {
                         menu ? (
-
                             <button onClick={() => setMenu(false)} className={styles.header__navResponsive__ham}>
                                 <i className="fa-solid fa-x"></i>
                             </button>
@@ -113,6 +117,11 @@ const Header = () => {
                     <div className={styles.header__navResponsive__links}>
                         <Link href={'/'}>
                             <i className="fa-solid fa-cart-shopping"></i>
+                            {
+                                (cart?.length > 0) && (
+                                    <span>{cart?.length}</span>
+                                )
+                            }
                         </Link>
                         <a className={styles.header__navResponsive__links__tel} href="tel:+998937011723">
                             <i className="fa-solid fa-phone"></i>

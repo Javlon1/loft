@@ -15,6 +15,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import Message from '@/app/components/ui/Message/Message';
 
 const data = [
     {
@@ -85,6 +86,7 @@ const Detail = () => {
     return (
         <section className={styles.detail}>
             <MyContainer>
+                <Message messages={messageText} type={messageType} />
                 <div className={styles.detail__items}>
                     <Link href={'/catalog'}>
                         <i className="fa-solid fa-arrow-left"></i>
@@ -174,37 +176,40 @@ const Detail = () => {
                                             <p>{item.paintType}</p>
                                         </li>
                                     </ul>
-                                    <div className={styles.right__items}>
-                                        <label>
-                                            <p>{count[lan]}</p>
-                                            <div className={styles.right__items__counter}>
-                                                <button onClick={() => { if (counter > 1) setCounter(counter -= 1) }}>
-                                                    <i className="fa-solid fa-minus"></i>
-                                                </button>
-                                                <p>{counter}</p>
-                                                <button onClick={() => setCounter(counter += 1)}>
-                                                    <i className="fa-solid fa-plus"></i>
-                                                </button>
+                                    {
+                                        (!cart.some(cartItem => cartItem.id === item.id)) && (
+                                            <div className={styles.right__items}>
+                                                <label>
+                                                    <p>{count[lan]}</p>
+                                                    <div className={styles.right__items__counter}>
+                                                        <button onClick={() => { if (counter > 1) setCounter(counter -= 1) }}>
+                                                            <i className="fa-solid fa-minus"></i>
+                                                        </button>
+                                                        <p>{counter}</p>
+                                                        <button onClick={() => setCounter(counter += 1)}>
+                                                            <i className="fa-solid fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </label>
+                                                <label>
+                                                    <p>{color[lan]}</p>
+                                                    <ul className={styles.right__items__color}>
+                                                        {
+                                                            item.colors?.map((item) => (
+                                                                <li key={item.id}>
+                                                                    <Image
+                                                                        src={item.img}
+                                                                        alt='color'
+                                                                    />
+                                                                </li>
+                                                            ))
+                                                        }
+                                                    </ul>
+                                                </label>
                                             </div>
-                                        </label>
-                                        <label>
-                                            <p>{color[lan]}</p>
-                                            <ul className={styles.right__items__color}>
-                                                {
-                                                    item.colors?.map((item) => (
-                                                        <li key={item.id}>
-                                                            <Image
-                                                                src={item.img}
-                                                                alt='color'
-                                                            />
-                                                        </li>
-                                                    ))
-                                                }
-                                            </ul>
-                                        </label>
-                                    </div>
+                                        )
+                                    }
                                     <button
-
                                         onClick={() => {
                                             if (!cart.some(cartItem => cartItem.id === item.id)) {
                                                 setCart([...cart, { ...item, quantity: counter }]);
@@ -213,7 +218,7 @@ const Detail = () => {
                                                 setMessageText("Mahsulot savatga qo'shildi");
                                             }
                                         }}
-                                        className={styles.right__btn}>{btn[lan]}</button>
+                                        className={styles.right__btn + ' ' + (cart.some(cartItem => cartItem.id === item.id) ? styles.disabled : '')}>{btn[lan]}</button>
                                 </div>
                             </div>
                         ))
